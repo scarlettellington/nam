@@ -57,7 +57,7 @@ menggunakan aplikasi:
    - settelah prdikskki selesai, hasilnya akan ditampilkan dalam format tabel
   
 persyaratan sistem:
-- pythom 3.x
+- python 3.x
 - lingkungan virtual
 - dependensi dapat dilihat di file 'requirements.txt'
   
