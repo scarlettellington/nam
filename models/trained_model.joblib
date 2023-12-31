@@ -1,0 +1,24 @@
+# Import library
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from joblib import dump
+
+# Langkah 1: Baca dataset
+dataset = pd.read_csv('dataset/dataset.csv')
+
+# Langkah 2: Pisahkan fitur dan target
+X = dataset.drop('target_column', axis=1)
+y = dataset['target_column']
+
+# Langkah 3: Bagi dataset menjadi data latih dan data uji
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Langkah 4: Pilih model (contoh: RandomForestClassifier)
+model = RandomForestClassifier()
+
+# Langkah 5: Latih model pada data latih
+model.fit(X_train, y_train)
+
+# Langkah 6: Simpan model ke dalam file
+dump(model, 'models/trained_model.joblib')
